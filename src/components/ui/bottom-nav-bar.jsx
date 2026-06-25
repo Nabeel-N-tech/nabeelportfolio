@@ -66,13 +66,13 @@ export function BottomNavBar({
       aria-label="Main Navigation"
       style={{ borderRadius: isOpen ? "28px" : "9999px" }}
       className={cn(
-        "backdrop-blur-2xl border shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)] flex flex-col justify-start overflow-hidden z-50 select-none relative transition-colors duration-500",
+        "backdrop-blur-2xl border shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)] flex flex-col justify-start overflow-hidden z-50 select-none transition-colors duration-500",
         scrolled
           ? "bg-[#0a0a0a]/70 border-white/[0.08]"
           : "bg-[#0a0a0a]/40 border-white/[0.06]",
         // Position
-        position === "bottom" && "fixed inset-x-0 bottom-6 mx-auto w-[92vw] md:w-[85vw] md:max-w-5xl",
-        position === "top" && "fixed inset-x-0 top-6 mx-auto w-[92vw] md:w-[85vw] md:max-w-5xl",
+        position === "bottom" && "fixed bottom-6 left-1/2 -translate-x-1/2 w-[92vw] md:w-[85vw] md:max-w-5xl",
+        position === "top" && "fixed top-6 left-1/2 -translate-x-1/2 w-[92vw] md:w-[85vw] md:max-w-5xl",
         className
       )}
     >

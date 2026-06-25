@@ -639,7 +639,8 @@ export default function HeroSection({ heroRef, scrollToProjects, scrollToContact
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary-accent shadow-[0_0_8px_#3B82F6] animate-pulse" />
             <MapPin className="w-3.5 h-3.5 text-text-dim" />
-            <span>Available for work · Kollam, Kerala, India</span>
+            <span className="hidden sm:inline">Available for work · Kollam, Kerala, India</span>
+            <span className="inline sm:hidden">Available · Kollam, IN</span>
           </motion.div>
 
           {/* Dynamic Massive Editorial Title — fluid, no awkward single-letter wrapping */}
@@ -707,7 +708,7 @@ export default function HeroSection({ heroRef, scrollToProjects, scrollToContact
             {/* Primary CTA — View Projects */}
             <button
               onClick={scrollToProjects}
-              className="btn-glass-cosmic flex items-center gap-3 font-bold text-xs font-mono uppercase tracking-[0.15em] px-8 py-5 shadow-2xl cursor-pointer relative overflow-hidden group"
+              className="btn-glass-cosmic flex items-center gap-3 font-bold text-[10px] sm:text-xs font-mono uppercase tracking-[0.15em] px-6 py-4 sm:px-8 sm:py-5 shadow-2xl cursor-pointer relative overflow-hidden group"
             >
               <span className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:animate-sweep pointer-events-none" />
               View Projects
@@ -718,7 +719,7 @@ export default function HeroSection({ heroRef, scrollToProjects, scrollToContact
             <a
               href="/nabeel_resume.pdf"
               download="Nabeel_Resume.pdf"
-              className="btn-ghost-silver flex items-center gap-3 font-bold text-xs font-mono uppercase tracking-[0.15em] px-8 py-5 cursor-pointer relative overflow-hidden group"
+              className="btn-ghost-silver flex items-center gap-3 font-bold text-[10px] sm:text-xs font-mono uppercase tracking-[0.15em] px-6 py-4 sm:px-8 sm:py-5 cursor-pointer relative overflow-hidden group"
             >
               <span className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[100%] group-hover:animate-sweep pointer-events-none" />
               Download CV

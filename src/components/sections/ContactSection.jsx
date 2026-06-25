@@ -75,27 +75,27 @@ function ContactCard({ Icon, label, value, href, isStatic = false }) {
   return (
     <CardWrapper
       {...linkProps}
-      className={`group relative flex items-center justify-between p-6 rounded-2xl bg-surface/50 border border-white/[0.04] transition-all duration-300 ${
+      className={`group relative flex items-center justify-between p-4 sm:p-6 rounded-2xl bg-surface/50 border border-white/[0.04] transition-all duration-300 ${
         isStatic 
           ? "cursor-default" 
           : "hover:border-primary-accent/30 hover:bg-surface-elevated/70 hover:shadow-[0_0_24px_rgba(59,130,246,0.06)] cursor-pointer"
       }`}
     >
-      <div className="flex items-center gap-5">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-surface border border-white/[0.06] group-hover:border-primary-accent/20 group-hover:bg-surface-elevated transition-colors">
+      <div className="flex items-center gap-3 sm:gap-5 min-w-0 flex-1 mr-2">
+        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-surface border border-white/[0.06] group-hover:border-primary-accent/20 group-hover:bg-surface-elevated transition-colors shrink-0">
           <Icon className="w-5 h-5 text-text-dim group-hover:text-primary-accent transition-colors" />
         </div>
-        <div className="text-left">
-          <p className="text-[10px] font-mono uppercase tracking-wider text-text-dim group-hover:text-primary-accent/80 transition-colors">
+        <div className="text-left min-w-0">
+          <p className="text-[10px] font-mono uppercase tracking-wider text-text-dim group-hover:text-primary-accent/80 transition-colors truncate">
             {label}
           </p>
-          <p className="text-sm font-sans text-white font-medium mt-1">
+          <p className="text-xs sm:text-sm font-sans text-white font-medium mt-1 break-all sm:break-normal truncate">
             {value}
           </p>
         </div>
       </div>
       {!isStatic && (
-        <ArrowUpRight className="w-5 h-5 text-text-dim opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-white transition-all duration-300" />
+        <ArrowUpRight className="w-5 h-5 text-text-dim opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-white transition-all duration-300 shrink-0" />
       )}
     </CardWrapper>
   );

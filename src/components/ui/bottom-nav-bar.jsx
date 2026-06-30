@@ -53,20 +53,23 @@ export function BottomNavBar({
 
   return (
     <motion.nav
-      initial={{ scale: 0.95, opacity: 0, y: position === "top" ? -20 : 20, height: 54 }}
+      initial={{ scale: 0.95, opacity: 0, y: position === "top" ? -20 : 20, height: 54, borderRadius: "9999px" }}
       animate={{
         scale: 1,
         opacity: 1,
         y: 0,
         height: isOpen ? 420 : 54,
+        borderRadius: isOpen ? "28px" : "9999px"
       }}
-      transition={{ type: "spring", stiffness: 280, damping: 28 }}
-      layout
+      transition={{ 
+        default: { type: "spring", stiffness: 280, damping: 28 },
+        height: { duration: 0.22, ease: [0.16, 1, 0.3, 1] },
+        borderRadius: { duration: 0.22, ease: [0.16, 1, 0.3, 1] }
+      }}
       role="navigation"
       aria-label="Main Navigation"
-      style={{ borderRadius: isOpen ? "28px" : "9999px" }}
       className={cn(
-        "backdrop-blur-2xl border shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)] flex flex-col justify-start overflow-hidden z-50 select-none transition-colors duration-500",
+        "backdrop-blur-md md:backdrop-blur-2xl border shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.08)] flex flex-col justify-start overflow-hidden z-50 select-none transition-colors duration-500",
         scrolled
           ? "bg-[#0a0a0a]/70 border-white/[0.08]"
           : "bg-[#0a0a0a]/40 border-white/[0.06]",
@@ -217,6 +220,7 @@ export function BottomNavBar({
                 strokeWidth="2.2"
                 stroke="currentColor"
                 strokeLinecap="round"
+                initial="closed"
                 variants={{
                   closed: { d: "M 3 5 L 17 5" },
                   open: { d: "M 4.5 15.5 L 15.5 4.5" }
@@ -230,6 +234,7 @@ export function BottomNavBar({
                 strokeWidth="2.2"
                 stroke="currentColor"
                 strokeLinecap="round"
+                initial="closed"
                 variants={{
                   closed: { opacity: 1 },
                   open: { opacity: 0 }
@@ -242,6 +247,7 @@ export function BottomNavBar({
                 strokeWidth="2.2"
                 stroke="currentColor"
                 strokeLinecap="round"
+                initial="closed"
                 variants={{
                   closed: { d: "M 3 15 L 17 15" },
                   open: { d: "M 4.5 4.5 L 15.5 15.5" }

@@ -87,7 +87,11 @@ export default function Portfolio() {
   }, []);
 
   const scrollTo = (ref) => {
-    if (ref.current) ref.current.scrollIntoView({ behavior: "smooth" });
+    if (lenis && ref.current) {
+      lenis.scrollTo(ref.current, { duration: 1.2 });
+    } else if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const navItems = [
